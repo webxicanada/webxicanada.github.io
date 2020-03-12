@@ -1,0 +1,12 @@
+/* Tablet optimizations for webxi editor */
+
+.inputs {
+	max-height: calc(40vh - 10px);
+	height: calc(40vh - 10px);
+	width: 100vh;
+	max-width: 100vw;
+}
+
+.app-title {
+	font-size: 18px;
+}
