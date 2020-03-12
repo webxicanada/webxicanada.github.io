@@ -527,6 +527,7 @@ input[type="file"] {
     border-radius: 0px 5px 5px 5px;
     padding: 1px 4px 1px 4px;
     min-width: 200px;
+    min-height: 20px;
 }
 
 .editing-on:hover {
@@ -549,7 +550,7 @@ input[type="file"] {
 
 /* POST TEXT LABELS */
 
-.title-label:before {
+.post-title-label:before {
 	content: "Title";
 	font-size: 15px;
 	position: absolute;
@@ -561,7 +562,7 @@ input[type="file"] {
 	left: -1px;
 }
 
-.main-label:before {
+.post-main-label:before {
 	content: "Main Content";
 	font-size: 15px;
 	position: absolute;
@@ -573,7 +574,7 @@ input[type="file"] {
 	left: -1px;
 }
 
-.subtitle-label:before {
+.post-subtitle-label:before {
 	content: "Subtitle";
 	font-size: 15px;
 	position: absolute;
@@ -585,7 +586,7 @@ input[type="file"] {
 	left: -1px;
 }
 
-.credit-label:before {
+.post-credit-label:before {
 	content: "Credits";
 	font-size: 15px;
 	position: absolute;
