@@ -34,7 +34,7 @@
 		<div id="captureimage" class="post-container">
 			<div class="post-content">
 				<p class="post-text">
-					<span class="main-post draggable title-reset post-line post-title-text" data-filter="title" contenteditable="false">
+					<span class="main-post draggable title-reset post-title post-line post-title-text" data-filter="title" contenteditable="false">
 						<span class="notdrag style-span bold" onclick="styleSpan(this)">Welcome</span> 
 						<span class="notdrag style-span bold" onclick="styleSpan(this)">to</span> 
 						<span class="notdrag style-span bold" onclick="styleSpan(this)">the</span> 
@@ -42,7 +42,7 @@
 						<span class="notdrag style-span bold italics" onclick="styleSpan(this)">content</span> 
 						<span class="notdrag style-span bold italics" onclick="styleSpan(this)">creator!</span>
 					</span>
-					<span class="main-post draggable main-reset post-line post-main-text" data-filter="main" contenteditable="false">
+					<span class="main-post draggable main-reset post-main post-line post-main-text" data-filter="main" contenteditable="false">
 						<span class="notdrag style-span" onclick="styleSpan(this)">You</span> 
 						<span class="notdrag style-span" onclick="styleSpan(this)">can</span> 
 						<span class="notdrag style-span" onclick="styleSpan(this)">use</span> 
@@ -98,12 +98,12 @@
 					</span>
 					<img id="logoImg" class="post-company-logo image-reset draggable" src="images/webxi-logo.png" />
 				</p>
-					<span class="main-post post-credit credit-reset draggable post-line" data-filter="credit" contenteditable="false">
-						<span class="notdrag style-span bold" onclick="styleSpan(this)">Follow</span> 
-						<span class="notdrag style-span bold" onclick="styleSpan(this)">Us!</span> 
-						<span class="notdrag style-span" onclick="styleSpan(this)">@webxicanada</span> 
-					</span>
-					<span class="editing-warning"><i class="fas fa-lock-open"></i> Editing enabled! Disable to activate dragging.</span>
+				<span class="main-post post-credit credit-reset draggable post-line" data-filter="credit" contenteditable="false">
+					<span class="notdrag style-span bold" onclick="styleSpan(this)">Follow</span> 
+					<span class="notdrag style-span bold" onclick="styleSpan(this)">Us!</span> 
+					<span class="notdrag style-span" onclick="styleSpan(this)">@webxicanada</span> 
+				</span>
+				<span class="editing-warning"><i class="fas fa-lock-open"></i> Editing enabled! Disable to activate dragging.</span>
 			</div>
 			<div class="post-overlay"></div>
 			<img id="myImg" class="post-image" src="images/default.png" alt="background image">
@@ -245,53 +245,54 @@
 
 			<div class="text-tabs">
 
-				<div class="input-tag text-edit edit-disabled" style="border-radius: 5px 5px 0px 0px" data-filter="edit-button">
-						<span class="edit-text">
-							<i class="fas fa-lock edit-text-icon edit-text"></i>
-							<span class="editing-text"> Edit Text</span>
-						</span>
+<!-- 				<div class="input-tag text-edit edit-disabled" style="border-radius: 5px 5px 0px 0px" data-filter="edit-button">
+					<span class="edit-text">
+						<i class="fas fa-lock edit-text-icon edit-text"></i>
+						<span class="editing-text"> Edit Text</span>
+					</span>
 				</div>
-				<span class="style-hint-text input-tag">Click here to edit post text. Text styling will be lost</span>
+				<span class="style-hint-text input-tag">Click here to edit post text. Text styling will be lost</span> -->
 
 				<div class="input-tag font-style" style="border-radius: 5px 5px 0px 0px">
-						<span class="font-bold font-bold font-style-button style-button btn-enabled" data-filter="bold"><i class="fas fa-bold"></i></span>
-						<span class="font-italics font-italics font-style-button style-button btn-disabled" data-filter="italics"><i class="fas fa-italic"></i></span>
-						<span class="font-underline font-underline font-style-button style-button btn-disabled" data-filter="underline"><i class="fas fa-underline"></i></span>
-						<span class="font-strikethrough font-strikethrough font-style-button style-button btn-disabled" data-filter="strikethrough"><i class="fas fa-strikethrough"></i></span>
+					<span class="font-bold font-bold font-style-button style-button btn-enabled" data-filter="bold"><i class="fas fa-bold"></i></span>
+					<span class="font-italics font-italics font-style-button style-button btn-disabled" data-filter="italics"><i class="fas fa-italic"></i></span>
+					<span class="font-underline font-underline font-style-button style-button btn-disabled" data-filter="underline"><i class="fas fa-underline"></i></span>
+					<span class="font-strikethrough font-strikethrough font-style-button style-button btn-disabled" data-filter="strikethrough"><i class="fas fa-strikethrough"></i></span>
 				</div>
 				<span class="style-hint-text input-tag">Hint: Click on the words you want to apply styles to.</span>
 
-				<div class="input-category input-sub-category title-line-tab toggle-closed">Title Line</div>
+				<div class="title-options">
+					<div class="input-category input-sub-category title-line-tab toggle-closed">Title Line</div>
 
-				<div class="text-title-tabs">
+					<div class="text-title-tabs">
 
-					<!-- <input class="input-tag title-text-input" type="text" placeholder="Enter text"> -->
+						<input class="input-tag text-input title-input" type="text" placeholder="Enter text" data-filter="post-title">
 
-					<div class="input-tag font-style">
-						<span class="title-font-left font-left title-align-button font-style-button btn-disabled"><i class="fas fa-align-left"></i></span>
-						<span class="title-font-center font-center title-align-button font-style-button btn-enabled"><i class="fas fa-align-center"></i></span>
-						<span class="title-font-right font-right title-align-button font-style-button btn-disabled"><i class="fas fa-align-right"></i></span>
-						<span class="title-font-justify font-justify title-align-button font-style-button btn-disabled"><i class="fas fa-align-justify"></i></span>
-					</div>
+						<div class="input-tag font-style">
+							<span class="title-font-left font-left title-align-button font-style-button btn-disabled"><i class="fas fa-align-left"></i></span>
+							<span class="title-font-center font-center title-align-button font-style-button btn-enabled"><i class="fas fa-align-center"></i></span>
+							<span class="title-font-right font-right title-align-button font-style-button btn-disabled"><i class="fas fa-align-right"></i></span>
+							<span class="title-font-justify font-justify title-align-button font-style-button btn-disabled"><i class="fas fa-align-justify"></i></span>
+						</div>
 
-					<select class="input-tag title-font-input select-font">
-						<option value="Select Font" disabled>Select Font</option>
-						<option value="Bungee">Bungee</option>
-						<option value="Bubblegum Sans">Bubblegum</option>
-						<option value="Aguafina Script">Aguafina</option>
-						<option value="Mrs Sheppards">Sheppards</option>
-						<option value="Dr Sugiyama">Sugiyama</option>
-						<option value="Tangerine">Tangerine</option>
-						<option value="Oswald">Oswald</option>
-						<option value="Playfair Display">Playfair</option>
-						<option value="Simonetta">Simonetta</option>
-						<option value="Montserrat" selected>Montserrat</option>
-						<option value="Roboto">Roboto</option>
-					</select>
+						<select class="input-tag title-font-input select-font">
+							<option value="Select Font" disabled>Select Font</option>
+							<option value="Bungee">Bungee</option>
+							<option value="Bubblegum Sans">Bubblegum</option>
+							<option value="Aguafina Script">Aguafina</option>
+							<option value="Mrs Sheppards">Sheppards</option>
+							<option value="Dr Sugiyama">Sugiyama</option>
+							<option value="Tangerine">Tangerine</option>
+							<option value="Oswald">Oswald</option>
+							<option value="Playfair Display">Playfair</option>
+							<option value="Simonetta">Simonetta</option>
+							<option value="Montserrat" selected>Montserrat</option>
+							<option value="Roboto">Roboto</option>
+						</select>
 
-					<button class="input-tag title-color-input jscolor {onFineChange:'titleColor()',valueElement:null,value:'e4ff38'}">
-						Font Color
-					</button>
+						<button class="input-tag title-color-input jscolor {onFineChange:'titleColor()',valueElement:null,value:'e4ff38'}">
+							Font Color
+						</button>
 
 					<!-- <div class="input-tag font-style" style="border-radius: 5px 5px 0px 0px">
 						<span class="title-font-bold font-bold font-style-button style-button title-style btn-enabled"><i class="fas fa-bold"></i></span>
@@ -341,12 +342,14 @@
 					</div> -->
 
 				</div>
+			</div>
 
+			<div class="main-options">
 				<div class="input-category input-sub-category main-content-tab toggle-closed">Main Content</div>
 
 				<div class="text-main-tabs">
 
-					<!-- <input class="input-tag main-input" type="text" placeholder="Enter text"> -->
+					<input class="input-tag text-input main-input" type="text" placeholder="Enter text" data-filter="post-main">
 
 					<div class="input-tag font-style">
 						<span class="main-font-left font-left main-align-button font-style-button btn-enabled"><i class="fas fa-align-left"></i></span>
@@ -422,12 +425,14 @@
 					</div> -->
 
 				</div>
+			</div>
 
+			<div class="subtitle-options">
 				<div class="input-category input-sub-category subtitle-tab toggle-closed">Subtitle</div>
 
 				<div class="text-subtitle-tabs">
 
-					<!-- <input class="input-tag subtitle-input" type="text" placeholder="Enter text"> -->
+					<input class="input-tag text-input subtitle-input" type="text" placeholder="Enter text" data-filter="post-subtitle">
 
 					<div class="input-tag font-style">
 						<span class="subtitle-font-left font-left subtitle-align-button font-style-button btn-enabled"><i class="fas fa-align-left"></i></span>
@@ -462,29 +467,29 @@
 						<span class="subtitle-font-strikethrough font-strikethrough font-style-button style-button subtitle-style btn-disabled"><i class="fas fa-strikethrough"></i></span>
 					</div>
 					<span class="style-hint-text input-tag">Hint: Click on the words you want to apply styles to.</span>
- -->
-					<div class="slider-tag">
-						<label class="slider-label">
-							<i class="fas fa-font"></i> Font Size 
-							<span class="subtitle-font-size-percent">3px</span>
-						</label>
-						<input type="range" class="input-slider subtitle-font-size" min="1" max="20" step="1" value="3">
-					</div>
+				-->
+				<div class="slider-tag">
+					<label class="slider-label">
+						<i class="fas fa-font"></i> Font Size 
+						<span class="subtitle-font-size-percent">3px</span>
+					</label>
+					<input type="range" class="input-slider subtitle-font-size" min="1" max="20" step="1" value="3">
+				</div>
 
-					<div class="slider-tag">
-						<label class="slider-label">
-							<i class="fas fa-text-width"></i> Content Width 
-							<span class="subtitle-text-width-percent">50%</span>
-						</label>
-						<input type="range" class="input-slider subtitle-text-width" min="1" max="100" step="1" value="50">
-					</div>
-					
-					<div class="input-tag position-reset" style="border-radius: 5px 5px 0px 0px" data-filter="subtitle-reset">
-						<span class="reset-text">
-							<i class="fas fa-undo reset-text"></i> Reset Position
-						</span>
-					</div>
-					<span class="style-hint-text reset-hint input-tag">Lost content? Click here to reset it!</span>
+				<div class="slider-tag">
+					<label class="slider-label">
+						<i class="fas fa-text-width"></i> Content Width 
+						<span class="subtitle-text-width-percent">50%</span>
+					</label>
+					<input type="range" class="input-slider subtitle-text-width" min="1" max="100" step="1" value="50">
+				</div>
+
+				<div class="input-tag position-reset" style="border-radius: 5px 5px 0px 0px" data-filter="subtitle-reset">
+					<span class="reset-text">
+						<i class="fas fa-undo reset-text"></i> Reset Position
+					</span>
+				</div>
+				<span class="style-hint-text reset-hint input-tag">Lost content? Click here to reset it!</span>
 
 					<!-- <div class="slider-tag">
 						<label class="slider-label">
@@ -503,12 +508,14 @@
 					</div> -->
 
 				</div>
+			</div>
 
+			<div class="credit-options">
 				<div class="input-category input-sub-category username-tab toggle-closed">Post Credits</div>
 
 				<div class="branding-username-tabs">
 
-					<!-- <input class="input-tag tag-input" type="text" placeholder="Enter text"> -->
+					<input class="input-tag text-input credit-input" type="text" placeholder="Enter text" data-filter="post-credit">
 
 					<div class="input-tag font-style">
 						<span class="username-font-left font-left username-align-button font-style-button btn-disabled"><i class="fas fa-align-left"></i></span>
@@ -584,41 +591,42 @@
 					</div> -->
 
 				</div>
-
 			</div>
 
-			<div class="input-category input-main-category logo-category toggle-closed">Image</div>
+		</div>
 
-			<div class="branding-tabs">
+		<div class="input-category input-main-category logo-category toggle-closed">Image</div>
 
-				<label class="file-label">
-					<input class="input-tag logo-file" type='file' />
-					<i class="fas fa-file-image"></i> 
-					Image Select
+		<div class="branding-tabs">
+
+			<label class="file-label">
+				<input class="input-tag logo-file" type='file' />
+				<i class="fas fa-file-image"></i> 
+				Image Select
+			</label>
+
+			<div class="slider-tag bg-input-a">
+				<label class="slider-label">
+					<i class="fas fa-expand-alt"></i> Image Size 
+					<span class="logo-size-percent">10%</span>
 				</label>
+				<input type="range" class="input-slider logo-size-input" min="0" max="100" step="1" value="10">
+			</div>
 
-				<div class="slider-tag bg-input-a">
-					<label class="slider-label">
-						<i class="fas fa-expand-alt"></i> Image Size 
-						<span class="logo-size-percent">10%</span>
-					</label>
-					<input type="range" class="input-slider logo-size-input" min="0" max="100" step="1" value="10">
-				</div>
+			<div class="slider-tag bg-input-a" style="margin-bottom: 10px;">
+				<label class="slider-label">
+					<i class="fas fa-ghost"></i> Image Opacity 
+					<span class="logo-opacity-percent slider-value">80%</span>
+				</label>
+				<input type="range" class="input-slider logo-opacity-input" min="0" max="100" step="1" value="80">
+			</div>
 
-				<div class="slider-tag bg-input-a" style="margin-bottom: 10px;">
-						<label class="slider-label">
-							<i class="fas fa-ghost"></i> Image Opacity 
-							<span class="logo-opacity-percent slider-value">80%</span>
-						</label>
-						<input type="range" class="input-slider logo-opacity-input" min="0" max="100" step="1" value="80">
-				</div>
-				
-				<div class="input-tag position-reset" style="border-radius: 5px 5px 0px 0px" data-filter="image-reset">
-						<span class="reset-text">
-							<i class="fas fa-undo reset-text"></i> Reset Position
-						</span>
-				</div>
-				<span class="style-hint-text reset-hint input-tag" style="margin-bottom: 10px;">Lost content? Click here to reset it!</span>
+			<div class="input-tag position-reset" style="border-radius: 5px 5px 0px 0px" data-filter="image-reset">
+				<span class="reset-text">
+					<i class="fas fa-undo reset-text"></i> Reset Position
+				</span>
+			</div>
+			<span class="style-hint-text reset-hint input-tag" style="margin-bottom: 10px;">Lost content? Click here to reset it!</span>
 
 				<!-- <div class="slider-tag bg-input-a">
 					<label class="slider-label">
@@ -681,11 +689,11 @@
 					</div>
 
 				</div>
- -->
-			</div>
-
+			-->
 		</div>
-		<!-- <button class="input-tag button-input savebutton">submit</button> -->
+
 	</div>
+	<!-- <button class="input-tag button-input savebutton">submit</button> -->
+</div>
 </body>
 </html>
