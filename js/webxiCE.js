@@ -152,79 +152,109 @@ function contentDrag() {
 
 // split input text into spans for styling clicks
 
-function textModify(text) {
-    $()
-        var str = $(text).text();
+function textModify() {
+
+    $(".text-input").on("input", function(e) {
+
+        var str = $(e.target).val();
         var words = str.split(" ");
         var spanstring = "";
+        var postarea = $(e.target).data("filter");
 
         $.each(words, function(index, value){
             spanstring += "<span class='notdrag style-span' onclick='styleSpan(this)'>" + value + "</span> ";
         });
-        $(text).html(spanstring);
+        $("." + postarea).html(spanstring);
+
+
+    });
 };
 
-// Set text to be editable
+// add editing box and label around elements.
 
-function textApply() {
+function editbox() {
+    $(".text-input").focus(function(e) {
+        
+        var postarea = $(e.target).data("filter");
 
-    $(".text-edit").click(function() {
-
-        $(this).toggleClass("edit-disabled edit-enabled");
-
-        if ($(this).hasClass("edit-enabled")) {
-
-            $(".draggable").draggable("disable");
-
-            $(".post-line").addClass("editing-on");
-
-            $(".edit-text-icon").removeClass("fa-lock").addClass("fa-lock-open");
-            $(".editing-text").text(" Done Editing").css("color", "#f74a6a");
-            $(".editing-warning").show();
-
-            $(".post-line").children().removeClass("notdrag");
-
-            $(".post-title-text").text($(".post-title-text").text());
-            $(".post-main-text").text($(".post-main-text").text());
-            $(".post-subtitle").text($(".post-subtitle").text());
-            $(".post-credit").text($(".post-credit").text());
-
-            $(".post-title-text").addClass("title-label");
-            $(".post-main-text").addClass("main-label");
-            $(".post-subtitle").addClass("subtitle-label");
-            $(".post-credit").addClass("credit-label");
-
-            $(".post-line").attr("contenteditable", "true");
-
-        } else if ($(this).hasClass("edit-disabled")) {
-
-            $(".draggable").draggable("enable");
-
-            $(".post-line").removeClass("editing-on");
-
-            $(".post-line").children().addClass("notdrag");
-
-            $(".edit-text-icon").removeClass("fa-lock-open").addClass("fa-lock");
-            $(".editing-text").text(" Edit Text").css("color", "white");
-            $(".editing-warning").hide();
-
-            $(".post-title-text").removeClass("title-label");
-            $(".post-main-text").removeClass("main-label");
-            $(".post-subtitle").removeClass("subtitle-label");
-            $(".post-credit").removeClass("credit-label");
-
-            textModify(".post-title-text");
-            textModify(".post-main-text");
-            textModify(".post-subtitle");
-            textModify(".post-credit");
-
-            $(".post-line").attr("contenteditable", "false");
-
-        };
+        $("." + postarea).addClass(postarea + "-label");
+        $("." + postarea).addClass("editing-on");
+        console.log("added");
 
     });
 
+    $(".text-input").blur(function(e) {
+        
+        var postarea = $(e.target).data("filter");
+
+        $("." + postarea).removeClass(postarea + "-label");
+        $("." + postarea).removeClass("editing-on");
+        console.log("removed");
+
+    });
 };
+
+// // Set text to be editable
+
+// function textApply() {
+
+//     $(".text-edit").click(function() {
+
+//         $(this).toggleClass("edit-disabled edit-enabled");
+
+//         if ($(this).hasClass("edit-enabled")) {
+
+//             $(".draggable").draggable("disable");
+
+//             $(".post-line").addClass("editing-on");
+
+//             $(".edit-text-icon").removeClass("fa-lock").addClass("fa-lock-open");
+//             $(".editing-text").text(" Done Editing").css("color", "#f74a6a");
+//             $(".editing-warning").show();
+
+//             $(".post-line").children().removeClass("notdrag");
+
+//             $(".post-title-text").text($(".post-title-text").text());
+//             $(".post-main-text").text($(".post-main-text").text());
+//             $(".post-subtitle").text($(".post-subtitle").text());
+//             $(".post-credit").text($(".post-credit").text());
+
+//             $(".post-title-text").addClass("title-label");
+//             $(".post-main-text").addClass("main-label");
+//             $(".post-subtitle").addClass("subtitle-label");
+//             $(".post-credit").addClass("credit-label");
+
+//             $(".post-line").attr("contenteditable", "true");
+
+//         } else if ($(this).hasClass("edit-disabled")) {
+
+//             $(".draggable").draggable("enable");
+
+//             $(".post-line").removeClass("editing-on");
+
+//             $(".post-line").children().addClass("notdrag");
+
+//             $(".edit-text-icon").removeClass("fa-lock-open").addClass("fa-lock");
+//             $(".editing-text").text(" Edit Text").css("color", "white");
+//             $(".editing-warning").hide();
+
+//             $(".post-title-text").removeClass("title-label");
+//             $(".post-main-text").removeClass("main-label");
+//             $(".post-subtitle").removeClass("subtitle-label");
+//             $(".post-credit").removeClass("credit-label");
+
+//             textModify(".post-title-text");
+//             textModify(".post-main-text");
+//             textModify(".post-subtitle");
+//             textModify(".post-credit");
+
+//             $(".post-line").attr("contenteditable", "false");
+
+//         };
+
+//     });
+
+// };
 
 // style / un-style when clicking on items.
 
@@ -337,7 +367,10 @@ $(document).ready(function() {
 
 // set post text
 
-textApply();
+textModify();
+
+// add edit box when editing text
+editbox()
     
 // reset text position
 resetPosition();
