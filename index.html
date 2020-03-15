@@ -11,6 +11,8 @@
 
 	<script src="js/webxiCE.js"></script>
 
+	<script src="js/defaultcontent.js"></script>
+
 	<link id="webxicss" rel="stylesheet" type="text/css" href="stylesheets/webxiCE.css">
 
 	<link id="responsive" rel="stylesheet" type="text/css" href="stylesheets/mobile.css">
@@ -34,7 +36,7 @@
 		<div id="captureimage" class="post-container">
 			<div class="post-content">
 				<p class="post-text">
-					<span class="main-post draggable title-reset post-title post-line post-title-text" data-filter="title" contenteditable="false">
+					<span id="title" class="main-post draggable title-reset post-title post-line post-title-text" data-filter="title" contenteditable="false">
 						<span class="notdrag style-span bold" onclick="styleSpan(this)">Welcome</span> 
 						<span class="notdrag style-span bold" onclick="styleSpan(this)">to</span> 
 						<span class="notdrag style-span bold" onclick="styleSpan(this)">the</span> 
@@ -42,7 +44,7 @@
 						<span class="notdrag style-span bold italics" onclick="styleSpan(this)">content</span> 
 						<span class="notdrag style-span bold italics" onclick="styleSpan(this)">creator!</span>
 					</span>
-					<span class="main-post draggable main-reset post-main post-line post-main-text" data-filter="main" contenteditable="false">
+					<span id="main" class="main-post draggable main-reset post-main post-line post-main-text" data-filter="main" contenteditable="false">
 						<span class="notdrag style-span" onclick="styleSpan(this)">You</span> 
 						<span class="notdrag style-span" onclick="styleSpan(this)">can</span> 
 						<span class="notdrag style-span" onclick="styleSpan(this)">use</span> 
@@ -73,7 +75,7 @@
 						<span class="notdrag style-span" onclick="styleSpan(this)">words</span> 
 						<span class="notdrag style-span" onclick="styleSpan(this)">to</span> 
 						<span class="notdrag style-span bold italics" onclick="styleSpan(this)">apply</span> 
-						<span class="notdrag style-span bold italics underline" onclick="styleSpan(this)">styles!</span> 
+						<span class="notdrag style-span bold italics underline" onclick="styleSpan(this)">styles!</span>
 						<span class="notdrag style-span" onclick="styleSpan(this)">For</span> 
 						<span class="notdrag style-span bold" onclick="styleSpan(this)">more</span> 
 						<span class="notdrag style-span bold" onclick="styleSpan(this)">options,</span> 
@@ -87,7 +89,7 @@
 						<span class="notdrag style-span" onclick="styleSpan(this)">options</span> 
 						<span class="notdrag style-span bold" onclick="styleSpan(this)">panel.</span> 
 					</span>
-					<span class="main-post draggable subtitle-reset post-line post-subtitle" data-filter="subtitle" contenteditable="false">
+					<span id="subtitle" class="main-post draggable subtitle-reset post-line post-subtitle" data-filter="subtitle" contenteditable="false">
 						<span class="notdrag style-span" onclick="styleSpan(this)">To</span> 
 						<span class="notdrag style-span bold" onclick="styleSpan(this)">save</span> 
 						<span class="notdrag style-span italics" onclick="styleSpan(this)">your</span> 
@@ -98,7 +100,7 @@
 					</span>
 					<img id="logoImg" class="post-company-logo image-reset draggable" src="images/webxi-logo.png" />
 				</p>
-				<span class="main-post post-credit credit-reset draggable post-line" data-filter="credit" contenteditable="false">
+				<span id="credit" class="main-post post-credit credit-reset draggable post-line" data-filter="credit" contenteditable="false">
 					<span class="notdrag style-span bold" onclick="styleSpan(this)">Follow</span> 
 					<span class="notdrag style-span bold" onclick="styleSpan(this)">Us!</span> 
 					<span class="notdrag style-span" onclick="styleSpan(this)">@webxicanada</span> 
@@ -152,7 +154,7 @@
 							<i class="fas fa-sun input-icon"></i> Brightness 
 							<span class="bg-brightness-percent slider-value">70%</span>
 						</label>
-						<input type="range" class="input-slider bg-brightness-input" min="0" max="200" step="1" value="70" data-filter="brightness">
+						<input id="brightness" type="range" class="input-slider bg-brightness-input" min="0" max="200" step="1" value="70" data-filter="brightness" data-index="0">
 					</div>
 
 					<div class="slider-tag bg-input-a">
@@ -160,7 +162,7 @@
 							<i class="fas fa-adjust"></i> Contrast 
 							<span class="bg-contrast-percent slider-value">130%</span>
 						</label>
-						<input type="range" class="input-slider bg-contrast-input" min="0" max="200" step="1" value="130" data-filter="contrast">
+						<input id="contrast" type="range" class="input-slider bg-contrast-input" min="0" max="200" step="1" value="130" data-filter="contrast" data-index="1">
 					</div>
 
 					<div class="slider-tag bg-input-a">
@@ -168,7 +170,7 @@
 							<i class="fas fa-eye-dropper"></i> Saturation 
 							<span class="bg-saturation-percent slider-value">115%</span>
 						</label>
-						<input type="range" class="input-slider bg-saturation-input" min="0" max="200" step="1" value="115" data-filter="saturate">
+						<input id="saturate" type="range" class="input-slider bg-saturation-input" min="0" max="200" step="1" value="115" data-filter="saturate" data-index="2">
 					</div>
 
 					<div class="slider-tag bg-input-a">
@@ -176,7 +178,7 @@
 							<i class="fas fa-swatchbook"></i> Hue 
 							<span class="bg-hue-percent slider-value">0%</span>
 						</label>
-						<input type="range" class="input-slider bg-hue-input" min="0" max="100" step="1" value="0" data-filter="hue-rotate">
+						<input id="hue-rotate" type="range" class="input-slider bg-hue-input" min="0" max="100" step="1" value="0" data-filter="hue-rotate" data-index="3">
 					</div>
 
 					<div class="slider-tag bg-input-a">
@@ -184,7 +186,7 @@
 							<i class="far fa-object-ungroup"></i> Sepia 
 							<span class="bg-sepia-percent slider-value">0%</span>
 						</label>
-						<input type="range" class="input-slider bg-sepia-input" min="0" max="100" step="1" value="0" data-filter="sepia">
+						<input id="sepia" type="range" class="input-slider bg-sepia-input" min="0" max="100" step="1" value="0" data-filter="sepia" data-index="4">
 					</div>
 
 					<div class="slider-tag bg-input-a">
@@ -192,7 +194,7 @@
 							<i class="fas fa-tint"></i> Blur 
 							<span class="bg-blur-percent slider-value">4%</span>
 						</label>
-						<input type="range" class="input-slider bg-blur-input" min="0" max="15" step="1" value="4" data-filter="blur">
+						<input id="blur" type="range" class="input-slider bg-blur-input" min="0" max="15" step="1" value="4" data-filter="blur" data-index="5">
 					</div>
 
 					<div class="slider-tag bg-input-a">
@@ -200,7 +202,7 @@
 							<i class="fas fa-meh-blank"></i> Grayscale 
 							<span class="bg-grayscale-percent slider-value">0%</span>
 						</label>
-						<input type="range" class="input-slider bg-grayscale-input" min="0" max="100" step="1" value="0" data-filter="grayscale">
+						<input id="grayscale" type="range" class="input-slider bg-grayscale-input" min="0" max="100" step="1" value="0" data-filter="grayscale" data-index="6">
 					</div>
 
 					<div class="slider-tag bg-input-a">
@@ -208,7 +210,7 @@
 							<i class="fas fa-exchange-alt"></i> Invert 
 							<span class="bg-invert-percent slider-value">0%</span>
 						</label>
-						<input type="range" class="input-slider bg-invert-input" min="0" max="100" step="1" value="0" data-filter="invert">
+						<input id="invert" type="range" class="input-slider bg-invert-input" min="0" max="100" step="1" value="0" data-filter="invert" data-index="7">
 					</div>
 
 					<div class="slider-tag bg-input-a">
@@ -216,7 +218,7 @@
 							<i class="fas fa-ghost"></i> Opacity 
 							<span class="bg-opacity-percent slider-value">100%</span>
 						</label>
-						<input type="range" class="input-slider bg-opacity-input" min="0" max="100" step="1" value="100" data-filter="opacity">
+						<input id="opacity" type="range" class="input-slider bg-opacity-input" min="0" max="100" step="1" value="100" data-filter="opacity" data-index="8">
 					</div>
 
 				</div>
@@ -225,7 +227,7 @@
 
 				<div class="overlay-tabs">
 
-					<button class="input-tag color-input jscolor {onFineChange:'overlayColor()',valueElement:null,value:'2080c9'}">
+					<button class="input-tag color-input jscolor {onFineChange:'overlayColor()',valueElement:null,value:'2080c9'}" data-filter="post-overlay">
 						Overlay Color
 					</button>
 
@@ -254,10 +256,10 @@
 				<span class="style-hint-text input-tag">Click here to edit post text. Text styling will be lost</span> -->
 
 				<div class="input-tag font-style" style="border-radius: 5px 5px 0px 0px">
-					<span class="font-bold font-bold font-style-button style-button btn-enabled" data-filter="bold"><i class="fas fa-bold"></i></span>
-					<span class="font-italics font-italics font-style-button style-button btn-disabled" data-filter="italics"><i class="fas fa-italic"></i></span>
-					<span class="font-underline font-underline font-style-button style-button btn-disabled" data-filter="underline"><i class="fas fa-underline"></i></span>
-					<span class="font-strikethrough font-strikethrough font-style-button style-button btn-disabled" data-filter="strikethrough"><i class="fas fa-strikethrough"></i></span>
+					<span id="bold-btn" class="font-bold font-bold font-style-button style-button btn-enabled" data-filter="bold"><i class="fas fa-bold"></i></span>
+					<span id="italics-btn" class="font-italics font-italics font-style-button style-button btn-disabled" data-filter="italics"><i class="fas fa-italic"></i></span>
+					<span id="underline-btn" class="font-underline font-underline font-style-button style-button btn-disabled" data-filter="underline"><i class="fas fa-underline"></i></span>
+					<span id="strikethrough-btn" class="font-strikethrough font-strikethrough font-style-button style-button btn-disabled" data-filter="strikethrough"><i class="fas fa-strikethrough"></i></span>
 				</div>
 				<span class="style-hint-text input-tag">Hint: Click on the words you want to apply styles to.</span>
 
@@ -266,13 +268,13 @@
 
 					<div class="text-title-tabs">
 
-						<input class="input-tag text-input title-input" type="text" placeholder="Enter text" data-filter="post-title">
+						<input class="input-tag text-input title-input post-title-input" type="text" placeholder="Enter text" data-filter="post-title">
 
 						<div class="input-tag font-style">
-							<span class="title-font-left font-left title-align-button font-style-button btn-disabled"><i class="fas fa-align-left"></i></span>
-							<span class="title-font-center font-center title-align-button font-style-button btn-enabled"><i class="fas fa-align-center"></i></span>
-							<span class="title-font-right font-right title-align-button font-style-button btn-disabled"><i class="fas fa-align-right"></i></span>
-							<span class="title-font-justify font-justify title-align-button font-style-button btn-disabled"><i class="fas fa-align-justify"></i></span>
+							<span id="title-align-left" class="title-font-left font-left title-align-button font-style-button btn-disabled"><i class="fas fa-align-left"></i></span>
+							<span id="title-align-center" class="title-font-center font-center title-align-button font-style-button btn-enabled"><i class="fas fa-align-center"></i></span>
+							<span id="title-align-right" class="title-font-right font-right title-align-button font-style-button btn-disabled"><i class="fas fa-align-right"></i></span>
+							<span id="title-align-justify" class="title-font-justify font-justify title-align-button font-style-button btn-disabled"><i class="fas fa-align-justify"></i></span>
 						</div>
 
 						<select class="input-tag title-font-input select-font">
@@ -349,13 +351,13 @@
 
 				<div class="text-main-tabs">
 
-					<input class="input-tag text-input main-input" type="text" placeholder="Enter text" data-filter="post-main">
+					<input class="input-tag text-input main-input post-main-input" type="text" placeholder="Enter text" data-filter="post-main">
 
 					<div class="input-tag font-style">
-						<span class="main-font-left font-left main-align-button font-style-button btn-enabled"><i class="fas fa-align-left"></i></span>
-						<span class="main-font-center font-center main-align-button font-style-button btn-disabled"><i class="fas fa-align-center"></i></span>
-						<span class="main-font-right font-right main-align-button font-style-button btn-disabled"><i class="fas fa-align-right"></i></span>
-						<span class="main-font-justify font-justify main-align-button font-style-button btn-disabled"><i class="fas fa-align-justify"></i></span>
+						<span id="main-align-left" class="main-font-left font-left main-align-button font-style-button btn-enabled"><i class="fas fa-align-left"></i></span>
+						<span id="main-align-center" class="main-font-center font-center main-align-button font-style-button btn-disabled"><i class="fas fa-align-center"></i></span>
+						<span id="main-align-right" class="main-font-right font-right main-align-button font-style-button btn-disabled"><i class="fas fa-align-right"></i></span>
+						<span id="main-align-justify" class="main-font-justify font-justify main-align-button font-style-button btn-disabled"><i class="fas fa-align-justify"></i></span>
 					</div>
 
 					<select class="input-tag maintext-font-input select-font">
@@ -432,13 +434,13 @@
 
 				<div class="text-subtitle-tabs">
 
-					<input class="input-tag text-input subtitle-input" type="text" placeholder="Enter text" data-filter="post-subtitle">
+					<input class="input-tag text-input subtitle-input post-subtitle-input" type="text" placeholder="Enter text" data-filter="post-subtitle">
 
 					<div class="input-tag font-style">
-						<span class="subtitle-font-left font-left subtitle-align-button font-style-button btn-enabled"><i class="fas fa-align-left"></i></span>
-						<span class="subtitle-font-center font-center subtitle-align-button font-style-button btn-disabled"><i class="fas fa-align-center"></i></span>
-						<span class="subtitle-font-right font-right subtitle-align-button font-style-button btn-disabled"><i class="fas fa-align-right"></i></span>
-						<span class="subtitle-font-justify font-justify subtitle-align-button font-style-button btn-disabled"><i class="fas fa-align-justify"></i></span>
+						<span id="subtitle-align-left" class="subtitle-font-left font-left subtitle-align-button font-style-button btn-enabled"><i class="fas fa-align-left"></i></span>
+						<span id="subtitle-align-center" class="subtitle-font-center font-center subtitle-align-button font-style-button btn-disabled"><i class="fas fa-align-center"></i></span>
+						<span id="subtitle-align-right" class="subtitle-font-right font-right subtitle-align-button font-style-button btn-disabled"><i class="fas fa-align-right"></i></span>
+						<span id="subtitle-align-justify" class="subtitle-font-justify font-justify subtitle-align-button font-style-button btn-disabled"><i class="fas fa-align-justify"></i></span>
 					</div>
 
 					<select class="input-tag subtitle-font-input select-font">
@@ -515,13 +517,13 @@
 
 				<div class="branding-username-tabs">
 
-					<input class="input-tag text-input credit-input" type="text" placeholder="Enter text" data-filter="post-credit">
+					<input class="input-tag text-input credit-input post-credit-input" type="text" placeholder="Enter text" data-filter="post-credit">
 
 					<div class="input-tag font-style">
-						<span class="username-font-left font-left username-align-button font-style-button btn-disabled"><i class="fas fa-align-left"></i></span>
-						<span class="username-font-center font-center username-align-button font-style-button btn-enabled"><i class="fas fa-align-center"></i></span>
-						<span class="username-font-right font-right username-align-button font-style-button btn-disabled"><i class="fas fa-align-right"></i></span>
-						<span class="username-font-justify font-justify username-align-button font-style-button btn-disabled"><i class="fas fa-align-justify"></i></span>
+						<span id="credit-align-left" class="username-font-left font-left username-align-button font-style-button btn-disabled"><i class="fas fa-align-left"></i></span>
+						<span id="credit-align-center" class="username-font-center font-center username-align-button font-style-button btn-enabled"><i class="fas fa-align-center"></i></span>
+						<span id="credit-align-right" class="username-font-right font-right username-align-button font-style-button btn-disabled"><i class="fas fa-align-right"></i></span>
+						<span id="credit-align-justify" class="username-font-justify font-justify username-align-button font-style-button btn-disabled"><i class="fas fa-align-justify"></i></span>
 					</div>
 
 					<select class="input-tag username-font-input select-font">
@@ -692,8 +694,9 @@
 			-->
 		</div>
 
+		<button class="input-tag reset-defaults">Reset Defaults</button>
+
 	</div>
-	<!-- <button class="input-tag button-input savebutton">submit</button> -->
 </div>
 </body>
 </html>
