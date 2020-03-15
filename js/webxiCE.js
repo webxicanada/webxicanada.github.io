@@ -1,7 +1,3 @@
-$( function() {
-    $( ".draggable" ).resizable();
-  } );
-
 // Image uploading functionality
 
 $(function () {
