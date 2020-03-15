@@ -483,6 +483,21 @@ input[type="file"] {
 	background: #151927;
 }
 
+/* RESET DEFAULTS BUTTON */
+
+.reset-defaults {
+	font-weight: bold;
+}
+
+.reset-defaults:hover {
+	cursor: pointer;
+	background: #191e2e;
+}
+
+.reset-defaults:active {
+	background: #131723;
+}
+
 /* TEXT EDIT BUTTON */
 
 .edit-text {

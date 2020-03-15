@@ -515,9 +515,11 @@ $(window).resize(function() {
     switchCSS($(this).width(),$(this).height());
 });
 
+// clear localstorage on click
+
 function resetDefaults() {
     $(".reset-defaults").click(function() {
-        var confirmreset = confirm("Are you sure you want to reset the canvas? All changes will be lost.");
+        var confirmreset = confirm("Are you sure you want to clear the canvas? All changes will be lost.");
             if (confirmreset == true) {
                 localStorage.clear();
                 location.reload();
@@ -526,6 +528,8 @@ function resetDefaults() {
             };
     });
 };
+
+// run functions on window load
 
 window.onload = function() {
     if (localStorage) {
