@@ -1,5 +1,3 @@
-const ranges = RangeTouch.setup('input[type="range"]');
-
 // Image uploading functionality
 
 $(function () {
@@ -561,6 +559,8 @@ window.onload = function() {
 
 // Initialize functions
 $(document).ready(function() {
+
+const ranges = RangeTouch.setup('input[type="range"]');
 
 // reset image defaults
 
