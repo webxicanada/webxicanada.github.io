@@ -1,3 +1,5 @@
+const ranges = RangeTouch.setup('input[type="range"]');
+
 // Image uploading functionality
 
 $(function () {
