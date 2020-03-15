@@ -209,6 +209,7 @@ body {
 	background: #222a3f;
 	color: white;
 	padding-bottom: 10px;
+	-webkit-overflow-scrolling: touch;
 }
 
 .input-tag {
