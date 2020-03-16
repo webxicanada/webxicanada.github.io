@@ -580,17 +580,17 @@ resetPosition();
 switchCSS($(this).width(),$(this).height());
 
 // content width adjustment sliders
-slideDisplay(".title-text-width",".title-text-width-percent","","%","100");
-cssApply(".title-text-width",".post-title-text","width","%","100");
+slideDisplay(".title-text-width",".title-text-width-percent","","%","95");
+cssApply(".title-text-width",".post-title-text","width","%","95");
 
 slideDisplay(".main-text-width",".main-text-width-percent","","%","100");
 cssApply(".main-text-width",".post-main-text","width","%","100");
 
-slideDisplay(".subtitle-text-width",".subtitle-text-width-percent","","%","100");
-cssApply(".subtitle-text-width",".post-subtitle","width","%","100");
+slideDisplay(".subtitle-text-width",".subtitle-text-width-percent","","%","65");
+cssApply(".subtitle-text-width",".post-subtitle","width","%","65");
 
-slideDisplay(".username-text-width",".username-text-width-percent","","%","100");
-cssApply(".username-text-width",".post-credit","width","%","100");
+slideDisplay(".username-text-width",".username-text-width-percent","","%","35");
+cssApply(".username-text-width",".post-credit","width","%","35");
 
 // make content draggable
 contentDrag();
