@@ -121,8 +121,8 @@ function usernameColor() {
 
 function cssApply(inputSource,cssTarget,propertyType,units,defaultval) {
     if (localStorage) {
-        var sVal = localStorage.getItem(inputSource + "prop");
-        $(cssTarget).css(propertyType, (sVal || defaultval) + units);
+        var sVal = localStorage.getItem(inputSource + "prop") + units;
+        $(cssTarget).css(propertyType, (sVal || defaultval));
         $(inputSource).val(sVal || defaultval);
     };
 
@@ -580,17 +580,17 @@ resetPosition();
 switchCSS($(this).width(),$(this).height());
 
 // content width adjustment sliders
-slideDisplay(".title-text-width",".title-text-width-percent","","%","100");
-cssApply(".title-text-width",".post-title-text","width","%","100");
+slideDisplay(".title-text-width",".title-text-width-percent","","%","auto");
+cssApply(".title-text-width",".post-title-text","width","%","auto");
 
-slideDisplay(".main-text-width",".main-text-width-percent","","%","100");
-cssApply(".main-text-width",".post-main-text","width","%","100");
+slideDisplay(".main-text-width",".main-text-width-percent","","%","auto");
+cssApply(".main-text-width",".post-main-text","width","%","auto");
 
-slideDisplay(".subtitle-text-width",".subtitle-text-width-percent","","%","100");
-cssApply(".subtitle-text-width",".post-subtitle","width","%","100");
+slideDisplay(".subtitle-text-width",".subtitle-text-width-percent","","%","auto");
+cssApply(".subtitle-text-width",".post-subtitle","width","%","auto");
 
-slideDisplay(".username-text-width",".username-text-width-percent","","%","100");
-cssApply(".username-text-width",".post-credit","width","%","100");
+slideDisplay(".username-text-width",".username-text-width-percent","","%","auto");
+cssApply(".username-text-width",".post-credit","width","%","auto");
 
 // make content draggable
 contentDrag();
